@@ -1,0 +1,189 @@
+%!TEX program=xelatex
+
+% 碰到Windows版本提示Fandol字体，可以在命令行中以管理员权限执行：tlmgr update -self -all
+\documentclass[final]{cvpr}
+
+\usepackage[UTF8]{ctex}
+
+%\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage{overpic}
+\usepackage{booktabs} % 推荐添加：用于制作更专业的三线表
+
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+\usepackage[pagebackref=true,breaklinks=true,colorlinks,bookmarks=false]{hyperref}
+
+%\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** 在此处输入论文ID
+\def\confYear{CVPR 202X}
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% 自定义命令
+\newcommand{\mypara}[1]{\paragraph{#1.}}
+\renewcommand{\figref}[1]{图\ref{#1}}
+\renewcommand{\tabref}[1]{表\ref{#1}}
+\renewcommand{\equref}[1]{式\ref{#1}}
+\renewcommand{\secref}[1]{第\ref{#1}节}
+
+% 页面设置
+\setcounter{page}{1}
+
+\begin{document}
+
+\def\abstract{\centerline{\large\bf 摘要} \vspace*{12pt} \it}
+
+%%%%%%%%% 标题部分
+\title{在此处输入论文标题}
+
+\author{作者姓名$^{1}$\quad 作者姓名$^{1}$ \quad 作者姓名$^{2}$\\
+    $^{1}$ 第一单位名称 \quad \quad
+    $^2$ 第二单位名称\\
+}
+
+\maketitle
+
+%%%%%%%%% 摘要
+\begin{abstract}
+在此处撰写摘要。摘要应简明扼要地概括论文的研究背景、提出的方法、主要贡献以及实验结果。
+例如：我们提出了一种新的[方法名称]，用于解决[具体问题]。该方法利用了[核心技术]。
+实验结果表明，该方法在[数据集名称]上取得了优异的性能，优于现有的最先进方法。
+\end{abstract}
+
+%%%%%%%%% 正文部分
+
+\section{引言}\label{sec:Introduction}
+在此处撰写引言。介绍研究领域的背景、目前存在的问题、本文的动机以及主要贡献。
+
+主要贡献总结如下：
+\begin{itemize}
+    \item 提出了......
+    \item 改进了......
+    \item 验证了......
+\end{itemize}
+
+\section{相关工作}\label{sec:RelatedWorks}
+在此处综述相关工作。
+可以将相关工作分类讨论，例如：
+\mypara{基于A的方法} 描述此类方法的优缺点...
+\mypara{基于B的方法} 描述此类方法的优缺点...
+
+\section{本文方法}\label{sec:Method}
+在此处详细描述你的算法或模型。
+
+\subsection{问题定义}
+使用数学公式定义问题。例如，给定输入图像 $I$，我们的目标是计算......
+\begin{equation}\label{equ:Example}
+    y = f(x) + \epsilon
+\end{equation}
+
+\subsection{算法细节}
+详细描述算法步骤。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 实验部分（已替换为占位符）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{实验结果与分析}\label{sec:Experiment}
+
+我们在本节中展示实验设置、数据集介绍以及定性和定量的对比结果。
+
+\subsection{实验设置}
+\mypara{数据集} 我们在以下数据集上进行了测试：Dataset A, Dataset B...
+\mypara{参数设置} 实验中使用的参数如下：$\alpha = 0.5, \beta = 0.9$...
+\mypara{评价指标} 我们使用准确率（Precision）、召回率（Recall）以及F-measure来评价性能。
+
+\subsection{对比实验}
+我们将本文提出的方法与以下几种最先进的方法进行了对比：
+Method A \cite{98pami/Itti}, Method B \cite{03ACMMM/Ma_Contrast-based} 等。（请确保在bib文件中添加对应的引用）
+
+\subsubsection{运行时间对比}
+
+% 表格占位符
+\begin{table}[t]
+    \centering
+    \caption{不同方法在测试集上的平均运行时间对比（单位：秒）。我们的方法在保持精度的同时具有较快的速度。}
+    \label{tab:TimeComparison}
+    \begin{tabular}{l|c|c|c|c}
+        \toprule
+        方法 & Method A & Method B & Method C & \textbf{Ours} \\
+        \midrule
+        时间(s) & 0.XX & 1.XX & 0.XX & \textbf{0.XX} \\
+        代码环境 & Matlab & C++ & Python & \textbf{Python} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+如\tabref{tab:TimeComparison}所示，我们的方法运行时间为...
+
+\subsubsection{定量评估结果}
+
+% 复杂表格占位符
+\begin{table*}[t]
+    \centering
+    \caption{在主要数据集上的性能对比（占位数据）。加粗数字表示最优结果。}
+    \label{tab:Performance}
+    \begin{tabular}{l|ccc|ccc}
+        \toprule
+        & \multicolumn{3}{c|}{Dataset 1} & \multicolumn{3}{c}{Dataset 2} \\
+        方法 & Precision & Recall & F-measure & Precision & Recall & F-measure \\
+        \midrule
+        Comparison 1 & 0.85 & 0.80 & 0.82 & 0.75 & 0.70 & 0.72 \\
+        Comparison 2 & 0.88 & 0.82 & 0.85 & 0.78 & 0.75 & 0.76 \\
+        Comparison 3 & 0.89 & 0.85 & 0.87 & 0.80 & 0.78 & 0.79 \\
+        \midrule
+        \textbf{Ours} & \textbf{0.92} & \textbf{0.88} & \textbf{0.90} & \textbf{0.85} & \textbf{0.82} & \textbf{0.83} \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+定量实验结果如\tabref{tab:Performance}所示。可以看出，我们的方法在各项指标上均优于对比方法...
+
+\subsection{定性结果展示}
+
+% 图片占位符
+\begin{figure*}[t]
+    \centering
+    % 使用 demo 模式或者替换为你自己的文件名
+    % \includegraphics[width=\textwidth]{results_comparison.pdf}
+    \fbox{\parbox[c][4cm]{\textwidth}{\centering 图示占位符：此处放置多方法视觉对比图 \\ (例如：原图 | 真值 | 方法A | 方法B | 本文方法)}}
+    \caption{不同方法在具有挑战性的场景下的视觉对比结果。(a) 输入图像, (b) 真值 (Ground Truth), (c) Method A, (d) Method B, (e) \textbf{本文方法}。可以看出我们的方法在边缘细节处理上更具优势。}
+    \label{fig:VisualComparison}
+\end{figure*}
+
+\figref{fig:VisualComparison} 展示了部分可视化结果。在光照不均匀或背景复杂的情况下（如图中第一行所示），对比方法出现了误检，而我们的方法能够准确地...
+
+\subsection{消融实验 (Ablation Study)}
+为了验证模型中各模块的有效性，我们进行了消融实验。
+
+\begin{figure}[t]
+    \centering
+    % \includegraphics[width=\columnwidth]{ablation_plot.pdf}
+    \fbox{\parbox[c][5cm]{\columnwidth}{\centering 图示占位符：此处放置曲线图或柱状图 \\ (例如：PR曲线对比)}}
+    \caption{消融实验的P-R曲线对比。Ours-Full表示完整模型，Ours-Base表示去掉核心模块后的基准模型。}
+    \label{fig:Ablation}
+\end{figure}
+
+如图\ref{fig:Ablation}所示，移除[模块名称]后，性能下降了约X\%，这证明了该模块的重要性。
+
+\section{总结与展望}\label{sec:Conclusion}
+本文提出了一种......的方法。实验结果表明......
+在未来的工作中，我们将致力于......
+
+\paragraph{致谢.} 本项目受到了......基金的支持。
+
+{\small
+\bibliographystyle{ieee}
+% 请确保当前目录下有名为 Saliency.bib 或你自己的 .bib 文件
+\bibliography{Saliency}
+}
+
+\end{document}
